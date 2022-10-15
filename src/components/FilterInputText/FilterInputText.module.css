@@ -7,6 +7,13 @@
   gap: 1em;
 }
 
+.input > input {
+  padding: 0.8em;
+  border-radius: 10px;
+  min-width: 300px;
+  font-size: 1em;
+}
+
 .input > span {
   font-size: 1em;
   background-color: var(--primary-color);
