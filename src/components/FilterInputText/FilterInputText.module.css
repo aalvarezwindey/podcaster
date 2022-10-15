@@ -15,10 +15,12 @@
 }
 
 .input > span {
+  text-align: center;
+  min-width: 2.2em;
   font-size: 1em;
   background-color: var(--primary-color);
   color: white;
   font-weight: bold;
   padding: 0.25em;
-  border-radius: 10px;
+  border-radius: 20px;
 }
