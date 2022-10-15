@@ -1,0 +1,14 @@
+.header {
+  color: var(--primary-color);
+  border-bottom: 1px solid #d2d2d2;
+  padding: 1em 0.5em;
+
+}
+
+.header > h1 {
+  cursor: pointer;
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: bold;
+  width: fit-content;
+}

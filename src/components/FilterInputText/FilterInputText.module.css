@@ -1,0 +1,17 @@
+.input {
+  text-align: right;
+  margin: 1em;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1em;
+}
+
+.input > span {
+  font-size: 1em;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  padding: 0.25em;
+  border-radius: 10px;
+}

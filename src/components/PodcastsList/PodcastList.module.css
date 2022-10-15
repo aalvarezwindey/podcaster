@@ -1,0 +1,7 @@
+.list {
+  display: flex;
+  gap: 2em;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1em;
+}

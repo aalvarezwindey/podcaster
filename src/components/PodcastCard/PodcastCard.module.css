@@ -1,0 +1,38 @@
+.card {
+  -webkit-box-shadow: 8px 11px 10px -11px rgba(0,0,0,0.75);
+  -moz-box-shadow: 8px 11px 10px -11px rgba(0,0,0,0.75);
+  box-shadow: 8px 11px 10px -11px rgba(0,0,0,0.75);
+
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 1em;
+  padding-top: calc(var(--logo-width) / 2 + 1em);
+  margin-top: calc(var(--logo-width) / 2);
+  text-align: center;
+  width: 250px;
+  position: relative;
+  transition: transform .2s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card > img {
+  border-radius: 50%;
+  position: absolute;
+  top: calc(var(--logo-width) / -2);
+  left: calc(50% - var(--logo-width) / 2);
+  border: 1px solid black;
+}
+
+.card > h2 {
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+.card > p {
+  font-size: 0.9em;
+  color: rgb(74, 74, 74)
+}
