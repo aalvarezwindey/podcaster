@@ -10,7 +10,7 @@ export default function PodcastList({ podcasts, onPodcastSelected }) {
         <PodcastCard
           key={id}
           {...podcast}
-          onClick={() => onPodcastSelected(id)}
+          onClick={() => onPodcastSelected({ id, ...podcast })}
         />
       ))}
     </section>

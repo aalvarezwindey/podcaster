@@ -4,7 +4,7 @@ import PodcastEpisodeTrack from '../../components/PodcastEpisodeTrack/PodcastEpi
 
 export default function PodcastEpisodePage() {
   const { state } = useLocation();
-  const { title, description, mediaUrl } = state;
+  const { title, description, mediaUrl } = state.episode;
 
   return (
     <PodcastEpisodeTrack

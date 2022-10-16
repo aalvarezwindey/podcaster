@@ -9,8 +9,12 @@ export default function PodcastsPage() {
   const [filterText, setFilterText] = useState('');
   const podcasts = usePodcasts({ filterText });
 
-  const onPodcastSelected = (podcastId) => {
-    navigate(`/podcast/${podcastId}`);
+  const onPodcastSelected = (podcast) => {
+    navigate(`/podcast/${podcast.id}`, {
+      state: {
+        podcast,
+      },
+    });
   };
   return (
     <main>

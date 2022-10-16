@@ -35,15 +35,7 @@ class PodcastService extends HTTPService {
       // first element is data about Podcast
       const [podcastDetail, ...podcastEpisodesData] = podcastDetailData.results;
 
-      // NOTE: this could be improved by saving the selected podcast state in the client
-      // or if the API returns the detailed podcast in episodes fetch
-      // This algorithm has time complexity of O(n) with the other approach
-      // getting podcast detail would have O(1)
-      const podcasts = await this.getTopPodcasts();
-      const podcast = podcasts.find((podcast) => podcast.id === podcastId);
-
       return {
-        podcast,
         episodesAmount: podcastDetail.trackCount,
         episodes: podcastEpisodesData.map((episodeEntry) => ({
           id: episodeEntry.trackId,
