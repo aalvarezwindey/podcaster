@@ -10,15 +10,3 @@
   font-weight: bold;
   width: fit-content;
 }
-
-.header > h1 > a {
-  text-decoration: none;
-  color: inherit;
-  font-size: inherit;
-}
-
-.header > h1 > a:visited {
-  text-decoration: none;
-  text-decoration-color: none;
-  color: inherit
-}

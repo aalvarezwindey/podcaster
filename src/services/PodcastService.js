@@ -46,9 +46,12 @@ class PodcastService extends HTTPService {
         podcast,
         episodesAmount: podcastDetail.trackCount,
         episodes: podcastEpisodesData.map((episodeEntry) => ({
+          id: episodeEntry.trackId,
           title: episodeEntry.trackName,
           duration: episodeEntry.trackTimeMillis,
           releaseDate: episodeEntry.releaseDate,
+          description: episodeEntry.description,
+          mediaUrl: episodeEntry.episodeUrl,
         })),
       };
     } catch (err) {

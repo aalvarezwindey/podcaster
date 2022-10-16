@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './PodcastEpisodesTable.module.css';
 import Card from '../Card/Card';
+import { Link } from 'react-router-dom';
 function PodcastEpisodesTable({ episodes }) {
   return (
     <Card className={styles.card}>
@@ -11,10 +12,15 @@ function PodcastEpisodesTable({ episodes }) {
           <th>Date</th>
           <th>Duration</th>
         </tr>
-        {episodes.map(({ title, duration, releaseDate }) => {
+        {episodes.map((episode) => {
+          const { id, title, duration, releaseDate } = episode;
           return (
             <tr key={title}>
-              <td>{title}</td>
+              <td>
+                <Link to={`episode/${id}`} state={episode}>
+                  {title}
+                </Link>
+              </td>
               <td>{releaseDate}</td>
               <td>{duration}</td>
             </tr>

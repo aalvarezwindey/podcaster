@@ -25,3 +25,15 @@ body {
 main {
   padding: 1em;
 }
+
+a {
+  text-decoration: none;
+  text-decoration-color: none;
+  color: var(--primary-color)
+}
+
+a:visited {
+  text-decoration: none;
+  text-decoration-color: none;
+  
+}
