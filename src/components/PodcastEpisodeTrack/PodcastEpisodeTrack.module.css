@@ -1,0 +1,41 @@
+.card {
+  padding: 1.5em 1em;
+  height: fit-content;
+}
+
+.card > h1 {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card > p {
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+.audioPlaceholder {
+  width: 100%;
+  height: 54px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f3f4;
+  color: #444
+}
+
+.shimmer {
+  color: grey;
+  mask: linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;;
+  -webkit-mask: linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;
+  background-repeat: no-repeat;
+  animation: shimmer 2.5s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    -webkit-mask-position: left;
+    mask: left;
+  }
+}
