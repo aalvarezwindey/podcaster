@@ -21,3 +21,7 @@ body {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+main {
+  padding: 1em;
+}

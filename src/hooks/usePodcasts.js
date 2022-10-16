@@ -5,6 +5,7 @@ const podcasts = podcastsResponseMock.feed.entry.map((podcastEntry) => ({
   name: podcastEntry['im:name'].label,
   imageURL: podcastEntry['im:image'][2].label,
   author: podcastEntry['im:artist'].label,
+  description: podcastEntry.summary.label,
 }));
 export function usePodcasts({ filterText = '' }) {
   const filterTextTransformed = filterText.trim().toLowerCase();

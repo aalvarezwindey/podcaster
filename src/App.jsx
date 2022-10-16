@@ -1,7 +1,7 @@
-import { PodcastsPage } from './pages/podcasts';
+import { Router } from './router';
 
 function App() {
-  return <PodcastsPage />;
+  return <Router />;
 }
 
 export default App;

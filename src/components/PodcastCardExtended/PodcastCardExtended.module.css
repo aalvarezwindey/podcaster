@@ -1,0 +1,31 @@
+.card {
+  padding: 1em;
+  width: 250px;
+}
+
+
+.card > div {
+  text-align: center;
+}
+
+.card > h1 {
+  font-size: 1em;
+  margin: 0;
+}
+
+.card > h2 {
+  font-size: 0.95em;
+  margin: 0;
+}
+
+.card > p {
+  font-size: 0.9em;
+  color: rgb(74, 74, 74);
+  font-style: italic;
+  margin: 0.5em 0;
+}
+
+.card > hr {
+  border-top: 1px solid #fff;
+  margin: 1em 0;
+}

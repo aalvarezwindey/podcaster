@@ -1,0 +1,27 @@
+.card {
+  padding: 1em 0.5em;
+}
+
+.card > table {
+  border-collapse: collapse;
+}
+
+
+.card > table > tr > th {
+  padding: 0.5em;
+  text-align: left;
+}
+
+.card > table > tr > td {
+  padding: 0.5em;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.card > table  tr:nth-child(even) {
+  background-color: rgb(245, 245, 245);
+}
+
+.card > table > tr > td:nth-child(3) {
+  text-align: right;
+}
