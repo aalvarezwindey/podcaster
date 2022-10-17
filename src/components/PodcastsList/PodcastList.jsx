@@ -1,7 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PodcastCard from '../PodcastCard/PodcastCard';
+import PodcastCard, { PodcastCardShimmer } from '../PodcastCard/PodcastCard';
 import styles from './PodcastList.module.css';
+
+export function PodcastListShimmer({ size = 10 }) {
+  const ocurrences = new Array(size);
+  return (
+    <section className={styles.list}>
+      {[...ocurrences].map(() => (
+        <PodcastCardShimmer />
+      ))}
+    </section>
+  );
+}
 
 export default function PodcastList({ podcasts, onPodcastSelected }) {
   return (

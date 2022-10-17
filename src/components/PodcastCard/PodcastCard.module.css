@@ -1,5 +1,4 @@
 .card {
-  border-radius: 5px;
   padding: 1em;
   padding-top: calc(var(--logo-width) / 2 + 1em);
   margin-top: calc(var(--logo-width) / 2);
@@ -32,4 +31,16 @@
 .card > p {
   font-size: 0.9em;
   color: rgb(74, 74, 74)
+}
+
+.shimmerCard {
+  margin-top: calc(var(--logo-width) / 2);
+  position: relative;
+}
+
+.shimmerCard > div:nth-child(1) {
+  z-index: 2;
+  position: absolute;
+  top: calc(var(--logo-width) / -2);
+  left: calc(50% - var(--logo-width) / 2);
 }

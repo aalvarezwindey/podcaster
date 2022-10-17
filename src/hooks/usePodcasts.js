@@ -1,17 +1,21 @@
-import podcastsResponseMock from '../mocks/podcasts.json';
+import { PodcastService } from '../services';
+import { useService } from './useService';
 
-const podcasts = podcastsResponseMock.feed.entry.map((podcastEntry) => ({
-  id: podcastEntry.id.attributes['im:id'],
-  name: podcastEntry['im:name'].label,
-  imageURL: podcastEntry['im:image'][2].label,
-  author: podcastEntry['im:artist'].label,
-  description: podcastEntry.summary.label,
-}));
-export function usePodcasts({ filterText = '' }) {
+const usePodcasts = ({ filterText }, ...rest) => {
   const filterTextTransformed = filterText.trim().toLowerCase();
-  return podcasts.filter(
-    (podcast) =>
-      podcast.name.toLowerCase().includes(filterTextTransformed) ||
-      podcast.author.toLowerCase().includes(filterTextTransformed)
+  const serviceProps = useService(
+    () => PodcastService.getTopPodcasts(),
+    ...rest
   );
-}
+
+  return {
+    ...serviceProps,
+    data: (serviceProps.data || []).filter(
+      (podcast) =>
+        podcast.name.toLowerCase().includes(filterTextTransformed) ||
+        podcast.author.toLowerCase().includes(filterTextTransformed)
+    ),
+  };
+};
+
+export default usePodcasts;

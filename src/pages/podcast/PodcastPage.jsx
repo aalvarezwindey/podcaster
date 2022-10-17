@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
 import PodcastCardExtended from '../../components/PodcastCardExtended/PodcastCardExtended';
-import usePodcastDetail from '../../hooks/usePodcastDetail';
+import { usePodcastDetail } from '../../hooks';
 import { logger } from '../../logger';
 import styles from './PodcastPage.module.css';
 
