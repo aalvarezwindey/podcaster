@@ -1,5 +1,9 @@
-import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import React, { useLayoutEffect } from 'react';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  useLocation,
+} from 'react-router-dom';
 import {
   PodcastEpisodePage,
   PodcastEpisodesPage,
@@ -8,10 +12,22 @@ import {
   RootPage,
 } from '../pages';
 
+const ScrollToTopOnPageTransitions = ({ children }) => {
+  const location = useLocation();
+  useLayoutEffect(() => {
+    document.documentElement.scrollTo(0, 0);
+  }, [location.pathname]);
+  return children;
+};
+
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <RootPage />,
+    element: (
+      <ScrollToTopOnPageTransitions>
+        <RootPage />
+      </ScrollToTopOnPageTransitions>
+    ),
     children: [
       {
         path: '',
