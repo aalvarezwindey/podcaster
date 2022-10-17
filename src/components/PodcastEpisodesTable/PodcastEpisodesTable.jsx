@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import styles from './PodcastEpisodesTable.module.css';
 import Card from '../Card/Card';
 import { Link, useLocation } from 'react-router-dom';
+import { dateStringToDDMMYYYY } from '../../formatters/date';
+import { millisToDigitalWatchTime } from '../../formatters/time';
+
 function PodcastEpisodesTable({ episodes }) {
   const { state } = useLocation();
   return (
@@ -25,8 +28,8 @@ function PodcastEpisodesTable({ episodes }) {
                     {title}
                   </Link>
                 </td>
-                <td>{releaseDate}</td>
-                <td>{duration}</td>
+                <td>{dateStringToDDMMYYYY(releaseDate)}</td>
+                <td>{millisToDigitalWatchTime(duration)}</td>
               </tr>
             );
           })}
