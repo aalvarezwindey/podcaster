@@ -1,16 +1,7 @@
-import { useEffect, useState } from 'react';
 import { PodcastService } from '../services';
+import { useService } from './useService';
 
-export default function usePodcastDetail({ podcastId }) {
-  const [podcastDetail, setPodcastDetail] = useState();
+const usePodcastDetail = ({ podcastId }, ...rest) =>
+  useService(() => PodcastService.getPodcastEpisodes(podcastId), ...rest);
 
-  useEffect(() => {
-    PodcastService.getPodcastEpisodes(podcastId).then((data) =>
-      setPodcastDetail(data)
-    );
-  }, [podcastId]);
-
-  if (!podcastDetail) return null;
-
-  return { ...podcastDetail };
-}
+export default usePodcastDetail;
