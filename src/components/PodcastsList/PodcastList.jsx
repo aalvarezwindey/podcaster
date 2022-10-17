@@ -7,8 +7,8 @@ export function PodcastListShimmer({ size = 10 }) {
   const ocurrences = new Array(size);
   return (
     <section className={styles.list}>
-      {[...ocurrences].map(() => (
-        <PodcastCardShimmer />
+      {[...ocurrences].map((_, idx) => (
+        <PodcastCardShimmer key={idx} />
       ))}
     </section>
   );
