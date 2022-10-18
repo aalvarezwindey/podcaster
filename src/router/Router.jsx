@@ -15,12 +15,12 @@ import {
 const ScrollToTopOnPageTransitions = ({ children }) => {
   const location = useLocation();
   useLayoutEffect(() => {
-    document.documentElement.scrollTo(0, 0);
+    document?.documentElement?.scrollTo?.(0, 0);
   }, [location.pathname]);
   return children;
 };
 
-const router = createBrowserRouter([
+export const routes = [
   {
     path: '/',
     element: (
@@ -49,7 +49,10 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+];
+
+const router = createBrowserRouter(routes);
+
 export default function Router() {
   return <RouterProvider router={router} />;
 }
